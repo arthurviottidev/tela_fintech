@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cadastro - Fintech</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Fintech</h1>
+    <form>
+
+      <div class="row">
+        <!-- Campo nome completo -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="fullName">Nome completo</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Digite seu nome completo">
+          </div>
+        </div>
+
+        <!-- Campo data de nascimento -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dob">Data de nascimento</label>
+            <input type="text" class="form-control" id="dob" placeholder="DD/MM/AAAA" maxlength="8" oninput="formatDateInput(this)">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Campo CPF -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="11" oninput="formatCPFInput(this)">
+          </div>
+        </div>
+
+        <!-- Campo gênero -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="gender">Gênero</label>
+            <select class="custom-select">
+              <option selected>Selecione seu gênero</option>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+              <option value="naoInformar">Não informar</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Campo e-mail -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+          </div>
+        </div>
+
+        <!-- Campo senha -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha" oninput="validatePassword()">
+              <div class="input-group-append">
+                <span class="input-group-text password-icon" onclick="togglePassword('password')">👁️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Campo confirmação de senha -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="confirmPassword">Confirme sua senha</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Digite novamente sua senha" oninput="validatePassword()">
+              <div class="input-group-append">
+                <span class="input-group-text password-icon" onclick="togglePassword('confirmPassword')">👁️</span>
+                <span id="senhaMatch"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão de marcar -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="termsCheck">
+        <label class="form-check-label" for="termsCheck">Eu li e concordo com os termos e condições de uso.</label>
+      </div>
+
+      <!-- Botão de confirmação de cadastro -->
+      <div class="row">
+        <div class="col-md-6 text-center">
+            <button type="button" class="btn btn-primary">Criar minha conta</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
